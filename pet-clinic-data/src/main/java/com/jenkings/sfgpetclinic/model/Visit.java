@@ -1,9 +1,7 @@
 package com.jenkings.sfgpetclinic.model;
 
-import javax.persistence.Entity;
 import java.time.LocalDate;
 
-@Entity
 public class Visit extends BaseEntity {
 
    private LocalDate date;

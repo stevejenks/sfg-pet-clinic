@@ -1,18 +1,17 @@
 package com.jenkings.sfgpetclinic.model;
 
-import javax.persistence.Entity;
+import java.util.HashSet;
 import java.util.Set;
 
-@Entity
 public class Vet extends Person {
 
-   private Set<Speciality> specialties;
+   private Set<Speciality> specialities = new HashSet<>();
 
-   public Set<Speciality> getSpecialties() {
-      return specialties;
+   public Set<Speciality> getSpecialities() {
+      return specialities;
    }
 
-   public void setSpecialties(Set<Speciality> specialties) {
-      this.specialties = specialties;
+   public void setSpecialities(Set<Speciality> specialities) {
+      this.specialities = specialities;
    }
 }
