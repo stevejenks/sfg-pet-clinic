@@ -1,13 +1,13 @@
 package com.jenkings.sfgpetclinic.services.map;
 
 import com.jenkings.sfgpetclinic.model.Speciality;
-import com.jenkings.sfgpetclinic.services.SpecialitiesService;
+import com.jenkings.sfgpetclinic.services.SpecialityService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
-public class SpecialityServiceMap extends AbstractMapService<Speciality, Long> implements SpecialitiesService {
+public class SpecialityServiceMap extends AbstractMapService<Speciality, Long> implements SpecialityService {
 
    @Override
    public Speciality findById(Long id) {
