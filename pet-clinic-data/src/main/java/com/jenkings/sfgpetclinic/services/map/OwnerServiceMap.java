@@ -5,11 +5,13 @@ import com.jenkings.sfgpetclinic.model.Pet;
 import com.jenkings.sfgpetclinic.services.OwnerService;
 import com.jenkings.sfgpetclinic.services.PetService;
 import com.jenkings.sfgpetclinic.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
    private final PetTypeService petTypeService;
@@ -69,6 +71,10 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
 
    @Override
    public Owner findByLastName(String lastName) {
-      return null;
+
+      return super.findAll().stream()
+              .filter(owner -> owner.getLastName().equalsIgnoreCase(lastName))
+              .findFirst()
+              .orElse(null);
    }
 }
